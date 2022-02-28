@@ -14,10 +14,17 @@ import sys
 
 i = 1
 a = len(sys.argv)
+jomla = ''
+
 if a == 1:
     print("please enter string to rev")
     exit(0)
-while i < a:
-    string = sys.argv[i]
-    print(string[::-1])
-    i += 1
+if (a == 2):
+    string = sys.argv[i].swapcase()
+    print(string[::-1]) 
+if a > 2:
+    while i < a:
+        string = sys.argv[i].swapcase()
+        jomla = jomla + string + ' '
+        i += 1
+    print(jomla)
