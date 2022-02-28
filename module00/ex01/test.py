@@ -10,5 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-string = input()
-print(string[::-1])
+import sys
+
+i = 1
+a = len(sys.argv)
+if a == 1:
+    print("please enter string to rev")
+    exit(0)
+while i < a:
+    string = sys.argv[i]
+    print(string[::-1])
+    i += 1
