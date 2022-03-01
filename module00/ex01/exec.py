@@ -27,4 +27,4 @@ if a > 2:
         string = sys.argv[i].swapcase()
         jomla = jomla + string + ' '
         i += 1
-    print(jomla)
+    print(jomla[::-1])

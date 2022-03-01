@@ -17,7 +17,16 @@ from turtle import pu
 
 punc = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
 
-def test_analyzer(string):
+def text_analyzer(var):
+	'''What is the text to analyze?'''
+	if var.isnumeric():
+		print("AssertionError: argument is not a string")
+		exit(1)
+	l = len(var)
+	print(f"The text contains {l} character(s):")
+	test(var)
+
+def test(string):
 	num_low = 0
 	num_spa = 0
 	num_upp = 0
@@ -35,17 +44,11 @@ def test_analyzer(string):
 	print("lower letter(s) " + str(num_low))
 	print("upper letter(s) " + str(num_upp))
 	print("punctuation mark(s) " + str(num_punk))
-    
-
+   
 a = len(sys.argv)
 if a == 1:
-	print("What is the text to analyze?")
-	exit(0)
+	print(text_analyzer.__doc__)
 if a == 2:
-	for a in sys.argv[1]:
-		if a.isnumeric():
-			print("AssertionError: argument is not a string")
-			exit(1)
-	len = len(sys.argv[1])
-	print(f"The text contains {str(len)} character(s):")
-	test_analyzer(sys.argv[1])
+	text_analyzer(sys.argv[1])
+
+	
