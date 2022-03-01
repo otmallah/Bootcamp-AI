@@ -10,49 +10,42 @@
 #                                                                              #
 # **************************************************************************** #
 
+from os import PRIO_USER
+import string
+import sys
+from turtle import pu
 
-from cgi import test
-from curses.ascii import isupper
+punc = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
 
+def test_analyzer(string):
+	num_low = 0
+	num_spa = 0
+	num_upp = 0
+	num_punk = 0
+	for i in string:
+		if i in punc:
+			num_punk += 1
+		if i.islower():
+			num_low += 1
+		elif i.isupper():
+			num_upp += 1
+		elif i == ' ':
+			num_spa += 1
+	print("space " + str(num_spa))
+	print("lower letter(s) " + str(num_low))
+	print("upper letter(s) " + str(num_upp))
+	print("punctuation mark(s) " + str(num_punk))
+    
 
-#str = 'kkKKKK'
-#upp = 0
-#low = 0
-#spa = 0
-#
-#def test_analyse(str):
-#    for elem in str:
-#        if elem.isupper():
-#            upp += 1
-#        elif elem.islower():
-#            low += 1
-#        elif elem == ' ':
-#            spa += 1
-#        print("num space " + spa)
-
-def tes(str):
-    if str.isalnum():
-        print("ok")
-
-
-tes("cksjdkjsbfvjsk84bdf")
-
-
-#rom curses.ascii import isupper
-#mport sys
-#
-#
-#ef text_analyzer(string):
-#   for elem in string:
-#       if elem.isupper():
-#           upp += 1
-#       elif elem.islower():
-#           low += 1
-#       elif elem == ' ':
-#           spa += 1
-#   print("num upper " + upp)
-#   print("num lower " + low)
-#   print("num space " + spa)
-#
-#
-#ext_analyzer("sys.argv[3]")
+a = len(sys.argv)
+if a == 1:
+	print("What is the text to analyze?")
+	exit(0)
+if a == 2:
+	for a in sys.argv[1]:
+		if a.isnumeric():
+			print("AssertionError: argument is not a string")
+			exit(1)
+	len = len(sys.argv[1])
+	print(f"The text contains {str(len)} character(s):")
+	test_analyzer(sys.argv[1])
