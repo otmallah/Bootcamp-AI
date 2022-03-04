@@ -14,3 +14,4 @@
 kata = (19, 42, 21)
 string = "the 3 number are : {}"
 print(string.format(kata))
+

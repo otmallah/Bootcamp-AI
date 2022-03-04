@@ -24,7 +24,10 @@ if (a == 2):
     print(string[::-1]) 
 if a > 2:
     while i < a:
-        string = sys.argv[i].swapcase()
-        jomla = jomla + string + ' '
+        if i == (a - 1):
+            jomla = jomla + string
+        else:
+            string = sys.argv[i].swapcase()
+            jomla = jomla + string + ' '
         i += 1
     print(jomla[::-1])
