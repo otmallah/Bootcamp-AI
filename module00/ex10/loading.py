@@ -1,33 +1,36 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    filterwords.py                                     :+:      :+:    :+:    #
+#    loading.py                                         :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: otmallah <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/04 17:48:31 by otmallah          #+#    #+#              #
-#    Updated: 2022/03/04 17:48:31 by otmallah         ###   ########.fr        #
+#    Created: 2022/03/05 15:49:47 by otmallah          #+#    #+#              #
+#    Updated: 2022/03/05 15:49:47 by otmallah         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-import string
-import sys
+from asyncore import write
+from ctypes import sizeof
+from time import sleep
 
-size = len(sys.argv)
-newlist = []
-jomla = ''
-if size == 2 or size == 1:
-	print('ERROR')
-	exit()
-if size == 3:
-	string = sys.argv[1]
-	check = len(string)
-	for i in string:
-		if i != ' ' and i != check:
-			jomla = jomla + i
-		else:
-			if len(jomla) > int(sys.argv[2]):
-				newlist.append(jomla)
-			jomla = ''
 
-print(newlist)
+listy = range(100)
+
+def	func(list):
+	for elem in list:
+		yield elem
+jomla = '>'
+
+ret = 0
+for elem in func(listy):
+	ret += (elem + 3) % 5
+	jomla = '=' + jomla2
+	print(jomla2)
+	sleep(0.2)
+	jomla2 = jomla
+	del jomla
+
+print(ret)
+
+

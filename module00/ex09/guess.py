@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 
-secret_num = 13
+secret_num = 21
 
 a = '''This is an interactive guessing game!
 You have to enter a number between 1 and 30 to find out the secret number.

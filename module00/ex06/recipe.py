@@ -17,19 +17,19 @@ cookbook = {
     "Sandwich" : {
         'Ingredients' : 'ham' ', bread' ', cheese' ', tomatoes',
         'meal' : 'lunch',
-        'prep_time' : '10 min'
+        'prep_time' : '10 '
     },
 
     "cake" : {
         'Ingredients' : 'flour' ', sugar' ', eggs',
         'meal' : 'lunch',
-        'prep_time' : '60 min'
+        'prep_time' : '60 '
     },
 
     "salad" : {
         'Ingredients' : 'avocado' ', arugila' ', tomatoes',
         'meal' : 'dessert',
-        'prep_time' : '15 min'
+        'prep_time' : '15 '
     }
 }
 def print_reciep(var):
@@ -42,7 +42,7 @@ def print_reciep(var):
             print('to be eaten for ' , info)
             k = 2
         elif k == 2:
-            print('take ', info + ' of cooking')
+            print('take', info + ' minutes of cooking')
 
 def delet_reciep(var):
     del cookbook[var]
@@ -53,7 +53,7 @@ def add_reciep(name, ingredients, Meal, time):
 
 def print_all():
     for a, info in cookbook.items():
-        print('\n id = ' , a)
+        print('id = ' , a)
         for elem in info:
             print(elem + ':' , info[elem])
 
