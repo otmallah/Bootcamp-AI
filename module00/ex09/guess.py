@@ -40,11 +40,11 @@
 
 import random
 
-a = random.randint(1, 30)
+a = random.randint(0, 99)
 num = 1
 number = a
 fir = '''This is an interactive guessing game!
-You have to enter a number between 1 and 30 to find out the secret number.
+You have to enter a number between 1 and 99 to find out the secret number.
 Type 'exit' to end the game.
 Good luck!')'''
 b = '''Congratulations, you've got it!'''
@@ -53,7 +53,7 @@ spe = '''The answer to the ultimate question of life,
 print(fir)
 string = int(input('number = '))
 
-while str:
+while 1:
 	if string == number and num == 1:
 		print("Congratulations, You got it in on your first try!! ")
 		exit(0)

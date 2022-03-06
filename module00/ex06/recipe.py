@@ -32,6 +32,7 @@ cookbook = {
         'prep_time' : '15 '
     }
 }
+
 def print_reciep(var):
     k = 0
     for a , info in cookbook[var].items():
@@ -89,5 +90,4 @@ while 1:
          print_all()
     else:
         print(wrong)
-    #print(a)
     string = input(' = ')

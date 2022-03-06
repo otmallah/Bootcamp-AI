@@ -25,9 +25,11 @@ string = ''
 while i < j:
     for elem in sys.argv[i]:
         if elem.isupper():
-            a = elem.lower()
-        if a in encode_alpha:
-            string = string + encode_alpha[a]
+            elem = elem.lower()
+        if elem in encode_alpha:
+            string = string + encode_alpha[elem]
+        if elem in encode_num:
+            string = string + encode_num[elem]
     i += 1
 
 print(string)
